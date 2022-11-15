@@ -4,8 +4,6 @@ class Blog extends CI_Controller{
   {
     parent::__construct();
 
-    $this->load->database();
-    $this->load->helper('url');
     $this->load->model("BlogModel");
   }
   public function index(){
