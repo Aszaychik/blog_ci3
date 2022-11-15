@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Clean Blog - Start Bootstrap Theme</title>
+        <title>Aszaychik Blog</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -27,8 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"  href="<?php echo site_url('blog/createArticle');?>">Create Article</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -51,61 +50,31 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
+                <form action="" method="get" class="text-center mb-5">
+                    <input type="text" name="search">
+                    <button type="submit">Search</button>
+                </form>
                     <!-- Post preview-->
+                    <h1 class="text-center">
+                    Newest Article
+                    </h1>
+                    <hr class="my-4">
+                    <?php foreach ($blogs as $key => $blog){?>
                     <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                            <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
+                        <a href="<?= site_url("blog/detail/{$blog['url']}")?>">
+                            <h2 class="post-title"><?= $blog['title'];?></h2>
                         </a>
-                        <p class="post-meta">
-                            Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on September 24, 2022
+                        <p class="post-meta">Posted on <?= $blog['date'];?>
+                            <span>
+                                <a href="<?php echo site_url('blog/updateArticle/'.$blog['id']);?>"> Edit</a>
+                                <a href="<?php echo site_url('blog/deleteArticle/'.$blog['id']);?>"> Delete</a>
+                            </span>
                         </p>
+                        <p><?= $blog['content'];?></p>
                     </div>
+                    <?php } ?>
                     <!-- Divider-->
                     <hr class="my-4" />
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href="post.html"><h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2></a>
-                        <p class="post-meta">
-                            Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on September 18, 2022
-                        </p>
-                    </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Science has not yet mastered prophecy</h2>
-                            <h3 class="post-subtitle">We predict too much for the next year and yet far too little for the next ten.</h3>
-                        </a>
-                        <p class="post-meta">
-                            Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on August 24, 2022
-                        </p>
-                    </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Failure is not an option</h2>
-                            <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3>
-                        </a>
-                        <p class="post-meta">
-                            Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on July 8, 2022
-                        </p>
-                    </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Pager-->
-                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
                 </div>
             </div>
         </div>
@@ -146,42 +115,21 @@
             </div>
         </footer>
         <main>
-          <h1>Newest Article</h1>
-          <a href="<?php echo site_url('blog/createArticle');?>"> + Create Article</a>
+          
 
-          <form action="" method="get">
-            <input type="text" name="search">
-            <button type="submit">Search</button>
-          </form>
-
-          <?php
-          foreach ($blogs as $key => $blog){?>
+          
             <article class="blog">
               <h2>
-                <a href="<?= site_url("blog/detail/{$blog['url']}")?>"><?= $blog['title'];?></a>
+                
               </h2>
-              <a href="<?php echo site_url('blog/updateArticle/'.$blog['id']);?>"> Edit</a>
-              <a href="<?php echo site_url('blog/deleteArticle/'.$blog['id']);?>"> Delete</a>
-              <p><?= $blog['content'];?></p>
+              
+              
             </article>
-          <?php } ?>
+          
         </main> 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aszaychik Blog</title>
-</head>
-<body>
-
-</body>
 </html>
