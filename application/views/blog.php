@@ -2,13 +2,13 @@
 $this->load->view('partials/header');
 ?>
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('<?= base_url();?>assets/img/home-bg.jpg')">
+        <header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1422207258071-70754198c4a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1460&q=80')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
                             <h1>AszBlog</h1>
-                            <span class="subheading">A Blog using CI3 by <a class="" href="https://github.com/Aszaychik">AsZaychik</a></span>
+                            <span class="subheading">A Blog using CI3 by <a class="text-white" href="https://github.com/Aszaychik">AsZaychik</a></span>
                         </div>
                     </div>
                 </div>
@@ -19,8 +19,10 @@ $this->load->view('partials/header');
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                 <form action="" method="get" class="text-center mb-5">
-                    <input type="text" name="search">
-                    <button type="submit">Search</button>
+                    <div class="input-group">
+                        <input type="search" class="form-control" name="search" placeholder="Search ...">
+                        <input type="submit" class="btn btn-dark" value="Search">
+                    </div>
                 </form>
                     <!-- Post preview-->
                     <h1 class="text-center">
