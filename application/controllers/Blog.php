@@ -72,14 +72,10 @@ class Blog extends CI_Controller{
       $config['max_height']           = 1600;
 
       $this->load->library('upload', $config);
-
-      if (!$this->upload->do_upload('cover'))
+      $this->upload->do_upload('cover');
+      if(!empty($this->upload->data('file_name')))
       {
-          echo $this->upload->display_errors();
-      }
-      else
-      {
-          $post['cover'] = $this->upload->data('file_name');
+          $post['cover']= $this->upload->data('file_name');  
       }
 
       $id = $this->BlogModel->updateBlog($id, $post);
