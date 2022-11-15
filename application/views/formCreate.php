@@ -7,7 +7,7 @@ $this->load->view('partials/header');
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="post-heading">
-                    <h1>Update Article</h1>
+                    <h1>Create Article</h1>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@ $this->load->view('partials/header');
   <main class="container">
     <section class="row">
       <article class="col-md-8">
-        <h1>Create New Article</h1>
+        <h1>Create a New Article</h1>
         <form method="POST" class="text-capitalize">
           <fieldset class="form-group">
             <label class="" for="title">title</label>
