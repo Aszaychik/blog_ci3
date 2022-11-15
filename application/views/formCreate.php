@@ -13,28 +13,26 @@ $this->load->view('partials/header');
         </div>
     </div>
 </header>
-  <main class="container">
+  <main class="container text-capitalize">
     <section class="row">
       <article class="col-md-8">
         <h1>Create a New Article</h1>
-        <form method="POST" class="text-capitalize">
+        <?= form_open();?>
           <fieldset class="form-group">
-            <label class="" for="title">title</label>
-            <input class="form-control mb-3" type="text" name="title" id="title">
+            <label class="mb-2" for="title">title</label>
+            <?= form_input('title',null, 'class="form-control mb-3"');?>
           </fieldset>
           <fieldset class="form-group">
-            <label class="" for="url">url</label>
-            <input class="form-control mb-3" type="text" name="url" id="url">
+            <label class="mb-2" for="url">url</label>
+            <?= form_input('url',null, 'class="form-control mb-3"');?>
           </fieldset>
           <fieldset class="form-group">
-            <label class="" for="content">content</label>
-            <textarea class="form-control mb-3" name="content" id="content" cols="30" rows="10"></textarea>
-          </fieldset>
-            
+            <label class="mb-2" for="content">content</label>
+            <?= form_textarea('content', 'Lorem Ipsum...', 'class="form-control mb-3"');?>
           <button type="submit" class="btn btn-dark mb-3">Save Article</button>
+        <?= form_close();?>
       </article>
     </section>
-    </form>
     <?php 
 $this->load->view('partials/footer');
 ?>
