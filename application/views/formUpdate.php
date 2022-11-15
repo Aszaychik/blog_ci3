@@ -17,19 +17,23 @@ $this->load->view('partials/header');
     <section class="row">
       <article class="col-md-8">
         <h1>Update <?= $blog['title'];?></h1>
-        <?= form_open();?>
+        <?= form_open_multipart();?>
           <fieldset class="form-group">
-            <label for="title">title</label>
+            <label class="mb-2" for="title">title</label>
             <?= form_input('title',$blog['title'], 'class="form-control mb-3"');?>
           </fieldset>
           <fieldset class="form-group">
           
-            <label for="url">url</label>
+            <label class="mb-2" for="url">url</label>
             <?= form_input('url',$blog['url'], 'class="form-control mb-3"');?>
           </fieldset>
           <fieldset class="form-group">
-            <label for="content">content</label>
+            <label class="mb-2" for="content">content</label>
             <?= form_textarea('content',$blog['content'], 'class="form-control mb-5"');?>
+          </fieldset>
+          <fieldset class="form-group">
+            <label class="mb-2" for="cover">cover</label>
+            <?= form_upload('cover',$blog['cover'], 'class="form-control mb-5"');?>
           </fieldset>
           <button type="submit" class="btn btn-dark mb-5">Save Article</button>
         <?= form_close();?>

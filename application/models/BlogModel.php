@@ -4,7 +4,7 @@ class BlogModel extends CI_Model{
   {
     $filter = $this->input->get("search");
     $this->db->like('title', $filter);
-    $this->db->order_by("id", "desc");
+    $this->db->order_by("date", "desc");
     return $this->db->get("blog");
   }
 
