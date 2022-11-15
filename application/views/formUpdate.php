@@ -2,7 +2,7 @@
 $this->load->view('partials/header');
 ?>
 <!-- Page Header-->
-<header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1512413294297-496b8ce65ed7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')">
+<header class="masthead" style="background-image: url('https://scontent.fsub8-2.fna.fbcdn.net/v/t39.30808-6/310195025_1496125947476402_6729970876596988792_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeGxRrhZhJa7_lo2o-qlrtGJOU9dMVOwtsA5T10xU7C2wMrTmOY80c9rKPKBweDDZ2LVSVEYoOeBKPkb0e1s_4W6&_nc_ohc=O6Vw0h5xrJEAX-ac0a0&tn=og2zDuZcDLaZyeoO&_nc_ht=scontent.fsub8-2.fna&oh=00_AfBRNj-sUTzyo8kz1vx_e0_Dv6Trj6GwBx6c_VSaaIyz3A&oe=637877DD')">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
@@ -29,9 +29,9 @@ $this->load->view('partials/header');
           </fieldset>
           <fieldset class="form-group">
             <label for="content">content</label>
-            <?= form_textarea('content',$blog['content'], 'class="form-control mb-3"');?>
+            <?= form_textarea('content',$blog['content'], 'class="form-control mb-5"');?>
           </fieldset>
-          <button type="submit" class="btn btn-dark mb-3">Save Article</button>
+          <button type="submit" class="btn btn-dark mb-5">Save Article</button>
         <?= form_close();?>
       </article>
     </section>
