@@ -31,10 +31,11 @@ class Blog extends CI_Controller{
 
       $id = $this->BlogModel->insertBlog($data);
       if($id){
-        echo "Data saved";
+        echo 'alert("Data saved")';
+        redirect('/');
       }else{
-          echo "Save failed";
-        }
+        echo 'alert("Save failed")';
+      }
     }
     $this->load->view('formCreate');
   }
@@ -51,10 +52,11 @@ class Blog extends CI_Controller{
 
       $id = $this->BlogModel->updateBlog($id, $post);
       if($id){
-        echo "Data updated";
+        echo 'alert("Data updated")';
+        redirect('/');
       }else{
-          echo "Update failed";
-        }
+        echo 'alert("Update failed")';
+      }
     }
 
     $this->load->view('formUpdate', $data);
