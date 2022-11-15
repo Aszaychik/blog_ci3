@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detail article</title>
-</head>
-<body>
-  <main>
-    <h1><?= $blog['title'];?></h1>
-    <p><?= $blog['content'];?></p>
-  </main>
-</body>
-</html>
+<?php 
+$this->load->view('partials/header');
+?>
+<h1><?= $blog['title'];?></h1>
+<p><?= $blog['content'];?></p>
+  <?php 
+$this->load->view('partials/footer');
+?>
