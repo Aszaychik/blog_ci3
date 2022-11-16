@@ -7,8 +7,8 @@ $this->load->view('partials/header');
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>AszBlog</h1>
-                            <span class="subheading">A Blog using CI3 by <a class="text-white" href="https://github.com/Aszaychik">AsZaychik</a></span>
+                            <h1>Welcome to AszBlog</h1>
+                            <span class="subheading">A Blog using CI3 by <a class="fw-bold" href="https://github.com/Aszaychik">AsZaychik</a></span>
                         </div>
                     </div>
                 </div>
@@ -45,6 +45,7 @@ $this->load->view('partials/header');
                     <?php } ?>
                     <!-- Divider-->
                     <hr class="my-4" />
+                    <div class="d-flex gap-2 mb-3"><?= $this->pagination->create_links();?></div>
                 </div>
             </div>
         </div>

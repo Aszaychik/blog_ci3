@@ -6,8 +6,14 @@ class Blog extends CI_Controller{
 
     $this->load->model("BlogModel");
   }
-  public function index(){
-    $query = $this->BlogModel->getBlog();
+  public function index($offset = 0){
+    $this->load->library('pagination');
+    $config['base_url']     = site_url('blog/index');
+    $config['total_rows']   = $this->BlogModel->getTotalBlog();
+    $config['per_page']     = 3;
+    $this->pagination->initialize($config);
+
+    $query = $this->BlogModel->getBlog($config['per_page'], $offset);
     $data['blogs'] = $query->result_array();
 
     $this->load->view('blog', $data);
