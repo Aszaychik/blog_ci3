@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2022 at 01:00 AM
+-- Generation Time: Nov 16, 2022 at 09:26 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -46,7 +46,8 @@ INSERT INTO `blog` (`id`, `title`, `content`, `url`, `cover`, `date`) VALUES
 (3, 'Third Article', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, aliquam. Molestiae, nostrum aperiam. Sapiente quasi placeat ab optio impedit adipisci iure accusantium, vero culpa commodi, doloribus error quia, praesentium veniam.', 'Third-Article', '', '2022-11-15 18:06:38'),
 (8, 'Eight Article', '          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, aliquam. Molestiae, nostrum aperiam. Sapiente quasi placeat ab optio impedit adipisci iure accusantium, vero culpa commodi, doloribus error quia, praesentium veniam.        ', 'Eight-Article', '', '2022-11-15 19:34:18'),
 (10, 'Tenth Article', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, aliquam. Molestiae, nostrum aperiam. Sapiente quasi placeat ab optio impedit adipisci iure accusantium, vero culpa commodi, doloribus error quia, praesentium veniam.', 'Tenth-Article', 'BG_CS_Millenium_09.jpg', '2022-11-15 23:42:33'),
-(18, 'TEST COVER', 'Lorem Ipsum...', 'TEST-COVER', 'BG_CS_Millenium_07.jpg', '2022-11-15 23:35:58');
+(18, 'TEST COVER', 'Lorem Ipsum...', 'TEST-COVER', 'BG_CS_Millenium_07.jpg', '2022-11-15 23:35:58'),
+(19, 'LAST ARTICLE', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nobis enim numquam nemo quae, id earum, aut repellat iusto asperiores eaque dignissimos. Ab sequi nisi sapiente eveniet placeat qui sint.', 'LAST-ARTICLE', 'BG_CS_RAID_03.png', '2022-11-16 19:32:31');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +67,7 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
