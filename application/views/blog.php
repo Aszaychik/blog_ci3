@@ -18,6 +18,7 @@ $this->load->view('partials/header');
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
+                    <?= $this->session->flashdata('message');?>
                 <form action="" method="get" class="text-center mb-5">
                     <div class="input-group">
                         <input type="search" class="form-control" name="search" placeholder="Search ...">

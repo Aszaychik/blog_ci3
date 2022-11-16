@@ -5,6 +5,7 @@ class Blog extends CI_Controller{
     parent::__construct();
 
     $this->load->model("BlogModel");
+    $this->load->library('session');
   }
   public function index($offset = 0){
     $this->load->library('pagination');
@@ -54,12 +55,14 @@ class Blog extends CI_Controller{
           $data['cover'] = $this->upload->data('file_name');
       }
 
+      
       $id = $this->BlogModel->insertBlog($data);
       if($id){
-        echo 'alert("Data saved")';
+        $this->session->set_flashdata('message', '<div class="alert alert-success">Article Created</div>');
         redirect('/');
       }else{
-        echo 'alert("Save failed")';
+        $this->session->set_flashdata('message', '<div class="alert alert-danger">Article Failed to Create</div>');
+        redirect('/');
       }
     }
     $this->load->view('formCreate');
