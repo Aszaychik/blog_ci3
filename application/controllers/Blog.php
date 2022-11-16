@@ -122,5 +122,35 @@ class Blog extends CI_Controller{
     }
     redirect('/');
   }
+
+  public function login()
+  {
+    if($this->input->post()){
+      $username = $this->input->post('username');
+      $password = $this->input->post('password');
+
+
+
+      if($username == 'asz' && $password == 'asz'){
+        $_SESSION['username'] = 'admin';
+
+        redirect('/');
+      }else{
+        $this->session->set_flashdata('message', '<div class="alert alert-danger">Username or Password Invalid!</div>');
+
+        redirect('blog/login');
+      }
+
+    }
+    $this->load->view('login');
+
+    
+  }
+
+  public function logout()
+  {
+    $this->session->sess_destroy();
+    redirect('/');
+  }
 } 
 ?>
