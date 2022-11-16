@@ -38,7 +38,7 @@ $this->load->view('partials/header');
                         <p class="post-meta">Posted on <?= $blog['date'];?>
                             <span>
                                 <a href="<?php echo site_url('blog/updateArticle/'.$blog['id']);?>"> Edit</a>
-                                <a href="<?php echo site_url('blog/deleteArticle/'.$blog['id']);?>"> Delete</a>
+                                <a href="<?php echo site_url('blog/deleteArticle/'.$blog['id']);?>" onclick="return confirm('Are you sure to delete this Article ?')"> Delete</a>
                             </span>
                         </p>
                         <p><?= $blog['content'];?></p>

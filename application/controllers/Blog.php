@@ -57,6 +57,7 @@ class Blog extends CI_Controller{
 
       
       $id = $this->BlogModel->insertBlog($data);
+
       if($id){
         $this->session->set_flashdata('message', '<div class="alert alert-success">Article Created</div>');
         redirect('/');
@@ -85,8 +86,8 @@ class Blog extends CI_Controller{
       $config['upload_path']          = './uploads/';
       $config['allowed_types']        = 'gif|jpg|png';
       $config['max_size']             = 1000;
-      $config['max_width']            = 2000;
-      $config['max_height']           = 1600;
+      $config['max_width']            = 2560;
+      $config['max_height']           = 1440;
 
       $this->load->library('upload', $config);
       $this->upload->do_upload('cover');
@@ -96,11 +97,13 @@ class Blog extends CI_Controller{
       }
 
       $id = $this->BlogModel->updateBlog($id, $post);
+
       if($id){
-        echo 'alert("Data updated")';
+        $this->session->set_flashdata('message', '<div class="alert alert-success">Article Updated</div>');
         redirect('/');
       }else{
-        echo 'alert("Update failed")';
+        $this->session->set_flashdata('message', '<div class="alert alert-danger">Article Failed to Update</div>');
+        redirect('/');
       }
     }
 
@@ -109,7 +112,14 @@ class Blog extends CI_Controller{
 
   public function deleteArticle($id)
   {
-    $this->BlogModel->deleteBlog($id);
+    $result = $this->BlogModel->deleteBlog($id);
+
+    if($result){
+      $this->session->set_flashdata('message', '<div class="alert alert-success">Article Deleted</div>');
+    }
+    else{
+      $this->session->set_flashdata('message', '<div class="alert alert-danger">Article Failed to Delete</div>');
+    }
     redirect('/');
   }
 } 
