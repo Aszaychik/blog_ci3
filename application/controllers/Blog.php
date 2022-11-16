@@ -22,7 +22,11 @@ class Blog extends CI_Controller{
 
   public function createArticle()
   {
-    if($this->input->post()){
+    $this->form_validation->set_rules('title', 'title', 'required');
+    $this->form_validation->set_rules('url', 'url', 'required|alpha_dash');
+    $this->form_validation->set_rules('content', 'content', 'required');
+
+    if($this->form_validation->run() === true){
       $data['title'] = $this->input->post('title');
       $data['content'] = $this->input->post('content');
       $data['url'] = $this->input->post('url');

@@ -17,22 +17,27 @@ $this->load->view('partials/header');
     <section class="row">
       <article class="col-md-8">
         <h1>Create a New Article</h1>
+        <?php if(validation_errors()){?>
+          <div class="alert alert-danger">
+            <?= validation_errors();?>
+          </div>
+        <?php };?>
         <?= form_open_multipart();?>
           <fieldset class="form-group">
             <label class="mb-2" for="title">title</label>
-            <?= form_input('title',null, 'class="form-control mb-3"');?>
+            <?= form_input('title',set_value('title'), 'class="form-control mb-3"');?>
           </fieldset>
           <fieldset class="form-group">
             <label class="mb-2" for="url">url</label>
-            <?= form_input('url',null, 'class="form-control mb-3"');?>
+            <?= form_input('url',set_value('url'), 'class="form-control mb-3"');?>
           </fieldset>
           <fieldset class="form-group">
             <label class="mb-2" for="content">content</label>
-            <?= form_textarea('content', 'Lorem Ipsum...', 'class="form-control mb-3"');?>
+            <?= form_textarea('content', set_value('content'), 'class="form-control mb-3"');?>
           </fieldset>
           <fieldset class="form-group">
             <label class="mb-2" for="cover">cover</label>
-            <?= form_upload('cover', null, 'class="form-control mb-5"');?>
+            <?= form_upload('cover', set_value('cover'), 'class="form-control mb-5"');?>
           </fieldset>
           <button type="submit" class="btn btn-dark mb-5">Save Article</button>
         <?= form_close();?>
